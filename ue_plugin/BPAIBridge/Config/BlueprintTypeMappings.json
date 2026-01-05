@@ -1,0 +1,422 @@
+{
+	"_comment": "BPAIBridge type mappings. Edit without recompiling.",
+
+	"eventMappings": {
+		"_comment": "BlueprintImplementableEvent -> C++ virtual function (ownerClass, cppName, signature)",
+
+		"_comment_actor": "=== AActor events ===",
+		"ReceiveBeginPlay": {
+			"ownerClass": "Actor",
+			"cppName": "BeginPlay",
+			"signature": "void BeginPlay()"
+		},
+		"ReceiveEndPlay": {
+			"ownerClass": "Actor",
+			"cppName": "EndPlay",
+			"signature": "void EndPlay(const EEndPlayReason::Type EndPlayReason)"
+		},
+		"ReceiveTick": {
+			"ownerClass": "Actor",
+			"cppName": "Tick",
+			"signature": "void Tick(float DeltaSeconds)"
+		},
+		"_comment_damage": "NOTE: ReceiveAnyDamage, ReceivePointDamage, ReceiveRadialDamage are NOT virtual. Use delegates (OnTakeAnyDamage, OnTakePointDamage, OnTakeRadialDamage) or override TakeDamage() instead.",
+		"ReceiveActorBeginOverlap": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorBeginOverlap",
+			"signature": "void NotifyActorBeginOverlap(AActor* OtherActor)"
+		},
+		"ReceiveActorEndOverlap": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorEndOverlap",
+			"signature": "void NotifyActorEndOverlap(AActor* OtherActor)"
+		},
+		"ReceiveActorBeginCursorOver": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorBeginCursorOver",
+			"signature": "void NotifyActorBeginCursorOver()"
+		},
+		"ReceiveActorEndCursorOver": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorEndCursorOver",
+			"signature": "void NotifyActorEndCursorOver()"
+		},
+		"ReceiveActorOnClicked": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorOnClicked",
+			"signature": "void NotifyActorOnClicked(FKey ButtonPressed)"
+		},
+		"ReceiveActorOnReleased": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorOnReleased",
+			"signature": "void NotifyActorOnReleased(FKey ButtonReleased)"
+		},
+		"ReceiveActorOnInputTouchBegin": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorOnInputTouchBegin",
+			"signature": "void NotifyActorOnInputTouchBegin(ETouchIndex::Type FingerIndex)"
+		},
+		"ReceiveActorOnInputTouchEnd": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorOnInputTouchEnd",
+			"signature": "void NotifyActorOnInputTouchEnd(ETouchIndex::Type FingerIndex)"
+		},
+		"ReceiveActorOnInputTouchEnter": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorOnInputTouchEnter",
+			"signature": "void NotifyActorOnInputTouchEnter(ETouchIndex::Type FingerIndex)"
+		},
+		"ReceiveActorOnInputTouchLeave": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyActorOnInputTouchLeave",
+			"signature": "void NotifyActorOnInputTouchLeave(ETouchIndex::Type FingerIndex)"
+		},
+		"ReceiveHit": {
+			"ownerClass": "Actor",
+			"cppName": "NotifyHit",
+			"signature": "void NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)"
+		},
+		"ReceiveDestroyed": {
+			"ownerClass": "Actor",
+			"cppName": "Destroyed",
+			"signature": "void Destroyed()"
+		},
+		"K2_OnReset": {
+			"ownerClass": "Actor",
+			"cppName": "Reset",
+			"signature": "void Reset()"
+		},
+		"K2_OnBecomeViewTarget": {
+			"ownerClass": "Actor",
+			"cppName": "BecomeViewTarget",
+			"signature": "void BecomeViewTarget(APlayerController* PC)"
+		},
+		"K2_OnEndViewTarget": {
+			"ownerClass": "Actor",
+			"cppName": "EndViewTarget",
+			"signature": "void EndViewTarget(APlayerController* PC)"
+		},
+		"UserConstructionScript": {
+			"ownerClass": "Actor",
+			"cppName": "UserConstructionScript",
+			"signature": "void UserConstructionScript()"
+		},
+
+		"_comment_actorcomponent": "=== UActorComponent events ===",
+		"ReceiveAsyncPhysicsTick": {
+			"ownerClass": "ActorComponent",
+			"cppName": "AsyncPhysicsTickComponent",
+			"signature": "void AsyncPhysicsTickComponent(float DeltaTime, float SimTime)"
+		},
+
+		"_comment_pawn": "=== APawn events ===",
+		"ReceivePossessed": {
+			"ownerClass": "Pawn",
+			"cppName": "PossessedBy",
+			"signature": "void PossessedBy(AController* NewController)"
+		},
+		"ReceiveUnpossessed": {
+			"ownerClass": "Pawn",
+			"cppName": "UnPossessed",
+			"signature": "void UnPossessed()"
+		},
+		"ReceiveControllerChanged": {
+			"ownerClass": "Pawn",
+			"cppName": "NotifyControllerChanged",
+			"signature": "void NotifyControllerChanged()"
+		},
+		"ReceiveRestartedPawn": {
+			"ownerClass": "Pawn",
+			"cppName": "Restart",
+			"signature": "void Restart()"
+		},
+
+		"_comment_character": "=== ACharacter events ===",
+		"K2_OnMovementModeChanged": {
+			"ownerClass": "Character",
+			"cppName": "OnMovementModeChanged",
+			"signature": "void OnMovementModeChanged(EMovementMode PrevMovementMode, EMovementMode NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode)"
+		},
+		"K2_OnStartCrouch": {
+			"ownerClass": "Character",
+			"cppName": "OnStartCrouch",
+			"signature": "void OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)"
+		},
+		"K2_OnEndCrouch": {
+			"ownerClass": "Character",
+			"cppName": "OnEndCrouch",
+			"signature": "void OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)"
+		},
+		"K2_UpdateCustomMovement": {
+			"ownerClass": "Character",
+			"cppName": "UpdateCustomMovement",
+			"signature": "void UpdateCustomMovement(float DeltaTime)"
+		},
+
+		"_comment_controller": "=== AController events ===",
+		"ReceivePossess": {
+			"ownerClass": "Controller",
+			"cppName": "OnPossess",
+			"signature": "void OnPossess(APawn* PossessedPawn)"
+		},
+		"ReceiveUnPossess": {
+			"ownerClass": "Controller",
+			"cppName": "OnUnPossess",
+			"signature": "void OnUnPossess(APawn* UnpossessedPawn)"
+		},
+
+		"_comment_playerstate": "=== APlayerState events ===",
+		"ReceiveCopyProperties": {
+			"ownerClass": "PlayerState",
+			"cppName": "CopyProperties",
+			"signature": "void CopyProperties(APlayerState* NewPlayerState)"
+		},
+		"ReceiveOverrideWith": {
+			"ownerClass": "PlayerState",
+			"cppName": "OverrideWith",
+			"signature": "void OverrideWith(APlayerState* OldPlayerState)"
+		},
+
+		"_comment_gamemodebase": "=== AGameModeBase events ===",
+		"K2_OnChangeName": {
+			"ownerClass": "GameModeBase",
+			"cppName": "OnChangeName",
+			"signature": "void OnChangeName(AController* Other, const FString& NewName, bool bNameChange)"
+		},
+		"K2_OnLogout": {
+			"ownerClass": "GameModeBase",
+			"cppName": "OnLogout",
+			"signature": "void OnLogout(AController* ExitingController)"
+		},
+		"K2_OnRestartPlayer": {
+			"ownerClass": "GameModeBase",
+			"cppName": "OnRestartPlayer",
+			"signature": "void OnRestartPlayer(AController* NewPlayer)"
+		},
+		"K2_OnSwapPlayerControllers": {
+			"ownerClass": "GameModeBase",
+			"cppName": "OnSwapPlayerControllers",
+			"signature": "void OnSwapPlayerControllers(APlayerController* OldPC, APlayerController* NewPC)"
+		},
+		"K2_PostLogin": {
+			"ownerClass": "GameModeBase",
+			"cppName": "PostLogin",
+			"signature": "void PostLogin(APlayerController* NewPlayer)"
+		},
+
+		"_comment_gamemode": "=== AGameMode events ===",
+		"K2_OnSetMatchState": {
+			"ownerClass": "GameMode",
+			"cppName": "OnSetMatchState",
+			"signature": "void OnSetMatchState(FName NewState)"
+		},
+
+		"_comment_gameinstance": "=== UGameInstance events ===",
+		"ReceiveInit": {
+			"ownerClass": "GameInstance",
+			"cppName": "Init",
+			"signature": "void Init()"
+		},
+		"ReceiveShutdown": {
+			"ownerClass": "GameInstance",
+			"cppName": "Shutdown",
+			"signature": "void Shutdown()"
+		},
+		"HandleNetworkError": {
+			"ownerClass": "GameInstance",
+			"cppName": "HandleNetworkError",
+			"signature": "void HandleNetworkError(ENetworkFailure::Type FailureType, bool bIsServer)"
+		},
+		"HandleTravelError": {
+			"ownerClass": "GameInstance",
+			"cppName": "HandleTravelError",
+			"signature": "void HandleTravelError(ETravelFailure::Type FailureType)"
+		},
+
+		"_comment_hud": "=== AHUD events ===",
+		"ReceiveHitBoxBeginCursorOver": {
+			"ownerClass": "HUD",
+			"cppName": "NotifyHitBoxBeginCursorOver",
+			"signature": "void NotifyHitBoxBeginCursorOver(const FName BoxName)"
+		},
+		"ReceiveHitBoxEndCursorOver": {
+			"ownerClass": "HUD",
+			"cppName": "NotifyHitBoxEndCursorOver",
+			"signature": "void NotifyHitBoxEndCursorOver(const FName BoxName)"
+		},
+		"ReceiveHitBoxClick": {
+			"ownerClass": "HUD",
+			"cppName": "NotifyHitBoxClick",
+			"signature": "void NotifyHitBoxClick(const FName BoxName)"
+		},
+		"ReceiveHitBoxRelease": {
+			"ownerClass": "HUD",
+			"cppName": "NotifyHitBoxRelease",
+			"signature": "void NotifyHitBoxRelease(const FName BoxName)"
+		},
+
+		"_comment_cheatmanager": "=== UCheatManager events ===",
+		"ReceiveInitCheatManager": {
+			"ownerClass": "CheatManager",
+			"cppName": "InitCheatManager",
+			"signature": "void InitCheatManager()"
+		},
+
+		"_comment_debugcameracontroller": "=== ADebugCameraController events ===",
+		"ReceiveOnActivate": {
+			"ownerClass": "DebugCameraController",
+			"cppName": "OnActivate",
+			"signature": "void OnActivate(APlayerController* OriginalPC)"
+		},
+		"ReceiveOnDeactivate": {
+			"ownerClass": "DebugCameraController",
+			"cppName": "OnDeactivate",
+			"signature": "void OnDeactivate(APlayerController* RestoredPC)"
+		},
+		"ReceiveOnActorSelected": {
+			"ownerClass": "DebugCameraController",
+			"cppName": "OnActorSelected",
+			"signature": "void OnActorSelected(AActor* NewSelectedActor, const FVector& SelectHitLocation, const FVector& SelectHitNormal, const FHitResult& Hit)"
+		},
+
+		"_comment_gameplayability": "=== UGameplayAbility events ===",
+		"K2_ActivateAbility": {
+			"ownerClass": "GameplayAbility",
+			"cppName": "ActivateAbility",
+			"signature": "void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)"
+		},
+		"K2_ActivateAbilityFromEvent": {
+			"ownerClass": "GameplayAbility",
+			"cppName": "ActivateAbilityFromEvent",
+			"signature": "void ActivateAbilityFromEvent(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)"
+		},
+		"K2_OnEndAbility": {
+			"ownerClass": "GameplayAbility",
+			"cppName": "OnEndAbility",
+			"signature": "void OnEndAbility(bool bWasCancelled)"
+		},
+		"K2_CommitExecute": {
+			"ownerClass": "GameplayAbility",
+			"cppName": "CommitExecute",
+			"signature": "void CommitExecute(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo)"
+		},
+
+		"_comment_gameplaycue": "=== UGameplayCueNotify events ===",
+		"K2_HandleGameplayCue": {
+			"ownerClass": "GameplayCueNotify_Actor",
+			"cppName": "HandleGameplayCue",
+			"signature": "void HandleGameplayCue(AActor* MyTarget, EGameplayCueEvent::Type EventType, const FGameplayCueParameters& Parameters)"
+		},
+
+		"_comment_commonui": "=== CommonUI events ===",
+		"BP_OnActivated": {
+			"ownerClass": "CommonActivatableWidget",
+			"cppName": "NativeOnActivated",
+			"signature": "void NativeOnActivated()"
+		},
+		"BP_OnDeactivated": {
+			"ownerClass": "CommonActivatableWidget",
+			"cppName": "NativeOnDeactivated",
+			"signature": "void NativeOnDeactivated()"
+		},
+		"BP_GetDesiredFocusTarget": {
+			"ownerClass": "CommonActivatableWidget",
+			"cppName": "NativeGetDesiredFocusTarget",
+			"signature": "UWidget* NativeGetDesiredFocusTarget() const"
+		},
+
+		"_comment_lyra": "=== Lyra events ===",
+		"K2_OnDeathFinished": {
+			"ownerClass": "LyraCharacter",
+			"cppName": "OnDeathFinished",
+			"signature": "void OnDeathFinished(AActor* OwningActor)"
+		},
+		"K2_OnEquipped": {
+			"ownerClass": "LyraEquipmentInstance",
+			"cppName": "OnEquipped",
+			"signature": "void OnEquipped()"
+		},
+		"K2_OnUnequipped": {
+			"ownerClass": "LyraEquipmentInstance",
+			"cppName": "OnUnequipped",
+			"signature": "void OnUnequipped()"
+		},
+		"K2_OnAbilityAdded": {
+			"ownerClass": "LyraGameplayAbility",
+			"cppName": "OnAbilityAdded",
+			"signature": "void OnAbilityAdded()"
+		},
+		"K2_OnAbilityRemoved": {
+			"ownerClass": "LyraGameplayAbility",
+			"cppName": "OnAbilityRemoved",
+			"signature": "void OnAbilityRemoved()"
+		},
+		"K2_OnPawnAvatarSet": {
+			"ownerClass": "LyraGameplayAbility",
+			"cppName": "OnPawnAvatarSet",
+			"signature": "void OnPawnAvatarSet()"
+		},
+		"K2_OnStartAutoRun": {
+			"ownerClass": "LyraPlayerController",
+			"cppName": "OnStartAutoRun",
+			"signature": "void OnStartAutoRun()"
+		},
+		"K2_OnEndAutoRun": {
+			"ownerClass": "LyraPlayerController",
+			"cppName": "OnEndAutoRun",
+			"signature": "void OnEndAutoRun()"
+		},
+		"K2_OnFinishRestartPlayer": {
+			"ownerClass": "LyraPlayerSpawningManagerComponent",
+			"cppName": "OnFinishRestartPlayer",
+			"signature": "void OnFinishRestartPlayer(AController* Player, const FRotator& StartRotation)"
+		}
+	},
+
+	"typeMappings": {
+		"GameplayTag": "FGameplayTag",
+		"LinearColor": "FLinearColor",
+		"HitResult": "FHitResult",
+		"Vector": "FVector",
+		"Vector2D": "FVector2D",
+		"Rotator": "FRotator",
+		"Transform": "FTransform",
+		"Quat": "FQuat",
+		"Color": "FColor",
+		"Guid": "FGuid",
+		"DateTime": "FDateTime",
+		"Timespan": "FTimespan",
+		"Name": "FName",
+		"String": "FString",
+		"Text": "FText",
+		"Box": "FBox",
+		"Box2D": "FBox2D",
+		"Plane": "FPlane",
+		"Ray": "FRay",
+		"Sphere": "FSphere",
+		"Matrix": "FMatrix",
+		"IntPoint": "FIntPoint",
+		"IntVector": "FIntVector",
+		"FloatRange": "FFloatRange",
+		"Int32Range": "FInt32Range",
+		"SoftObjectPath": "FSoftObjectPath",
+		"SoftClassPath": "FSoftClassPath",
+		"GameplayTagContainer": "FGameplayTagContainer",
+		"GameplayTagQuery": "FGameplayTagQuery",
+		"GameplayAttribute": "FGameplayAttribute",
+		"GameplayEffectContextHandle": "FGameplayEffectContextHandle",
+		"GameplayAbilityTargetDataHandle": "FGameplayAbilityTargetDataHandle",
+		"PredictionKey": "FPredictionKey",
+		"ActiveGameplayEffectHandle": "FActiveGameplayEffectHandle",
+		"Character": "ACharacter",
+		"Actor": "AActor",
+		"Pawn": "APawn",
+		"Controller": "AController",
+		"GameModeBase": "AGameModeBase",
+		"GameStateBase": "AGameStateBase",
+		"PlayerState": "APlayerState",
+		"PlayerController": "APlayerController",
+		"AIController": "AAIController",
+		"HUD": "AHUD"
+	}
+}
